@@ -6,10 +6,6 @@ import FeatBadge from '@/components/FeatBadge';
 import { motion } from 'framer-motion';
 import BackToTop from '@/components/BackToTop';
 
-
-
-
-
 export default function Home() {
   return (
     <>
@@ -17,7 +13,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="text-center space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold animate-pulse text-indigo-600">
-            Hi, I'm Tejas 👋
+            Hi, I&apos;m Tejas 👋
           </h1>
           <p className="text-lg md:text-xl">
             Full Stack Developer | Problem Solver | Creative Thinker
@@ -60,13 +56,12 @@ export default function Home() {
           >
             <h2 className="text-3xl font-semibold mb-4">Projects</h2>
             <div className="grid md:grid-cols-2 gap-6">
-             <ProjectCard
-                  title="KrushiMitra App"
-                  description="Android app for farmers with weather updates, market prices, and expert advice."
-                  tech={['Android Studio', 'Firebase', 'Java']}
-                  videoUrl="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              <ProjectCard
+                title="KrushiMitra App"
+                description="Android app for farmers with weather updates, market prices, and expert advice."
+                tech={['Android Studio', 'Firebase', 'Java']}
+                videoUrl="https://www.youtube.com/embed/YOUR_VIDEO_ID"
               />
-
               <ProjectCard
                 title="Bluestack Internship"
                 description="Built responsive web apps using React, Node.js, and MongoDB. Improved UI/UX and optimized database queries."
@@ -142,6 +137,7 @@ export default function Home() {
             </p>
           </motion.div>
         </section>
+
         <BackToTop />
 
         {/* Footer */}
