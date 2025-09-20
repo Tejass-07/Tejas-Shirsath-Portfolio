@@ -1,15 +1,26 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function ProjectCard({ title, description, tech, videoUrl }) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 space-y-4 hover:shadow-lg transition">
-      <h3 className="text-xl font-semibold text-indigo-700">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-white/30 backdrop-blur-md rounded-xl shadow-lg p-6 space-y-4 hover:scale-105 hover:shadow-2xl transition-transform duration-300"
+    >
+      <h3 className="text-xl md:text-2xl font-bold text-indigo-600">{title}</h3>
+      <p className="text-gray-700">{description}</p>
 
       {/* Tech Stack */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mt-2">
         {tech.map((item, index) => (
-          <span key={index} className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded text-sm">
+          <span
+            key={index}
+            className="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 text-indigo-800 px-3 py-1 rounded-full text-xs md:text-sm font-medium"
+          >
             {item}
           </span>
         ))}
@@ -17,16 +28,16 @@ export default function ProjectCard({ title, description, tech, videoUrl }) {
 
       {/* Demo Video */}
       {videoUrl && (
-        <div className="aspect-video mt-4">
+        <div className="aspect-video mt-4 rounded-lg overflow-hidden shadow-md">
           <iframe
             src={videoUrl}
             title={`${title} Demo`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="w-full h-full rounded"
+            className="w-full h-full"
           />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
