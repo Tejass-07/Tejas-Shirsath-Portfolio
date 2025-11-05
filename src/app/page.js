@@ -54,7 +54,7 @@ export default function Home() {
         {/* CV Button */}
         <div className="mt-6">
           <a
-            href="/Tejas_Top.pdf"
+            href="/https://github.com/Prago2001/LP-3"
             target="_blank"
             rel="noopener"
             className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transition transform duration-300"
